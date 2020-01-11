@@ -21,7 +21,13 @@ public class RabbaniShop extends javax.swing.JFrame {
      */
     public RabbaniShop() {
         initComponents();
-        setTitle("Rabbani Putri Shop By Asna Nurfadilah");
+        setTitle("Rabbani Putri Shop By Asna Nurfadilah");  
+        
+        fldNamaBarang.setEditable(false);
+        fldBahan.setEditable(false);
+        fldUkuran.setEditable(false);
+        fldWarna.setEditable(false);
+        fldTotalHarga.setEditable(false);
     }
 
     /**
@@ -145,49 +151,13 @@ public class RabbaniShop extends javax.swing.JFrame {
         lblWarna.setText("Warna");
         getContentPane().add(lblWarna, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, -1, -1));
         getContentPane().add(fldNamaBarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 132, -1));
-
-        fldBahan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fldBahanActionPerformed(evt);
-            }
-        });
         getContentPane().add(fldBahan, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, 101, -1));
-
-        fldUkuran.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fldUkuranActionPerformed(evt);
-            }
-        });
         getContentPane().add(fldUkuran, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 270, 57, -1));
-
-        fldWarna.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fldWarnaActionPerformed(evt);
-            }
-        });
         getContentPane().add(fldWarna, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 370, 100, -1));
-
-        fldHarga.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fldHargaActionPerformed(evt);
-            }
-        });
         getContentPane().add(fldHarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, 82, -1));
-
-        fldQty.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fldQtyActionPerformed(evt);
-            }
-        });
         getContentPane().add(fldQty, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 340, 82, -1));
-
-        fldDiskon.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fldDiskonActionPerformed(evt);
-            }
-        });
         getContentPane().add(fldDiskon, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, 60, -1));
-        getContentPane().add(fldTotalHarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 350, 80, -1));
+        getContentPane().add(fldTotalHarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, 110, -1));
 
         lblHarga.setText("Harga       ");
         getContentPane().add(lblHarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
@@ -200,7 +170,7 @@ public class RabbaniShop extends javax.swing.JFrame {
 
         lblTotalHarga.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblTotalHarga.setText("Total Harga");
-        getContentPane().add(lblTotalHarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 320, -1, -1));
+        getContentPane().add(lblTotalHarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 330, -1, -1));
 
         Btotal.setText("TOTAL");
         Btotal.addActionListener(new java.awt.event.ActionListener() {
@@ -243,20 +213,9 @@ public class RabbaniShop extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void fldUkuranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldUkuranActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fldUkuranActionPerformed
-
-    private void fldHargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldHargaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fldHargaActionPerformed
-
-    private void fldQtyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldQtyActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fldQtyActionPerformed
-
     private void BkeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BkeluarActionPerformed
         // TODO add your handling code here:
+        // perintah untuk melakukan keluar dari program
         System.exit(0);
     }//GEN-LAST:event_BkeluarActionPerformed
 
@@ -265,21 +224,21 @@ public class RabbaniShop extends javax.swing.JFrame {
         int hargaAwal, hargaDiskon, hargaAkhir, total;
         
         if (fldNamaBarang.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Barang Harus Di Pilih!");
+            JOptionPane.showMessageDialog(null, "Barang Harus Dipilih!");
         } else if (fldBahan.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "jenis Bahan Harus Dipilih !");
         } else if (fldUkuran.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Ukuran Harus Di Pilih !");
+            JOptionPane.showMessageDialog(null, "Ukuran Harus Dipilih !");
         } else if (fldWarna.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Jenis Warna Harus Di Pilih !");
+            JOptionPane.showMessageDialog(null, "Jenis Warna Harus Dipilih !");
         } else if (fldHarga.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Harga Harus Ditentukan !");
         } else if (fldQty.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Jumlah Barang Harus Ditentukan !");
         } else if (fldDiskon.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Diskon Harus Di Tentukan !");
+            JOptionPane.showMessageDialog(null, "Diskon Harus Ditentukan !");
         } else {
-            JOptionPane.showMessageDialog(null, "Pesanan Akan Di Prosses !");
+            JOptionPane.showMessageDialog(null, "Pesanan Diprosses !");
             
             hargaAwal = (Integer.parseInt(fldHarga.getText()) * Integer.parseInt(fldDiskon.getText()) / 100);
             hargaDiskon = Integer.parseInt(fldHarga.getText()) - hargaAwal;
@@ -287,48 +246,40 @@ public class RabbaniShop extends javax.swing.JFrame {
             fldTotalHarga.setText("Rp. "+hargaAkhir);
         }
         
-        //int hargaDiskon, hargaAkhir, total;
-        //hargaDiskon = (Integer.parseInt(fldHarga.getText()) * Integer.parseInt(fldDiskon.getText()) / 100);
-        //hargaAkhir = Integer.parseInt(fldHarga.getText()) - hargaDiskon;
-        //total = hargaAkhir * Integer.parseInt(fldQty.getText());
-        //fldTotalHarga.setText("Rp. "+total);
-        
     }//GEN-LAST:event_BtotalActionPerformed
-
-    private void fldDiskonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldDiskonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fldDiskonActionPerformed
-
-    private void fldWarnaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldWarnaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fldWarnaActionPerformed
-
-    private void fldBahanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldBahanActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fldBahanActionPerformed
 
     private void listNamaBarangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listNamaBarangMouseClicked
         // TODO add your handling code here:
+        // Perintah dibawah  merupakan perintah untuk mengambil data dari variabel listNamaBarang
+        // dan di tampung di variabel fldNamaBarang
         fldNamaBarang.setText(listNamaBarang.getSelectedValue());
     }//GEN-LAST:event_listNamaBarangMouseClicked
 
     private void listBahanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listBahanMouseClicked
         // TODO add your handling code here:
+        // Perintah dibawah  merupakan perintah untuk mengambil data dari variabel listBahan
+        // dan di tampung di variabel fldBahan
         fldBahan.setText(listBahan.getSelectedValue());
     }//GEN-LAST:event_listBahanMouseClicked
 
     private void listUkuranMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listUkuranMouseClicked
         // TODO add your handling code here:
+        // Perintah dibawah  merupakan perintah untuk mengambil data dari variabel listUkuran
+        // dan di tampung di variabel listUkuran
         fldUkuran.setText(listUkuran.getSelectedValue());
     }//GEN-LAST:event_listUkuranMouseClicked
 
     private void listWarnaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listWarnaMouseClicked
         // TODO add your handling code here:
+        // Perintah dibawah  merupakan perintah untuk mengambil data dari variabel listWarna
+        // dan di tampung di variabel fldWarna
         fldWarna.setText(listWarna.getSelectedValue());
     }//GEN-LAST:event_listWarnaMouseClicked
 
     private void BulangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BulangActionPerformed
         // TODO add your handling code here:
+        // Kode setText("") dengan nilainya kosong merupakan perintah mengapus data yang
+        // ada di field fldNamaBarang sampai fldTotalHarga
         fldNamaBarang.setText("");
         fldBahan.setText("");
         fldUkuran.setText("");
