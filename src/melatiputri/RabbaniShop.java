@@ -154,8 +154,31 @@ public class RabbaniShop extends javax.swing.JFrame {
         getContentPane().add(fldBahan, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, 101, -1));
         getContentPane().add(fldUkuran, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 270, 57, -1));
         getContentPane().add(fldWarna, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 370, 100, -1));
+
+        fldHarga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fldHargaActionPerformed(evt);
+            }
+        });
+        fldHarga.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                fldHargaKeyTyped(evt);
+            }
+        });
         getContentPane().add(fldHarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, 82, -1));
+
+        fldQty.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                fldQtyKeyTyped(evt);
+            }
+        });
         getContentPane().add(fldQty, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 340, 82, -1));
+
+        fldDiskon.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                fldDiskonKeyTyped(evt);
+            }
+        });
         getContentPane().add(fldDiskon, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, 60, -1));
         getContentPane().add(fldTotalHarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, 110, -1));
 
@@ -224,19 +247,19 @@ public class RabbaniShop extends javax.swing.JFrame {
         int hargaAwal, hargaDiskon, hargaAkhir, total;
         
         if (fldNamaBarang.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Barang Harus Dipilih!");
+            JOptionPane.showMessageDialog(null, "Barang Harus Dipilih!", "Peringatan", JOptionPane.WARNING_MESSAGE);
         } else if (fldBahan.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "jenis Bahan Harus Dipilih !");
+            JOptionPane.showMessageDialog(null, "Jenis Bahan Harus Dipilih !", "Peringatan", JOptionPane.WARNING_MESSAGE);
         } else if (fldUkuran.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Ukuran Harus Dipilih !");
+            JOptionPane.showMessageDialog(null, "Ukuran Harus Dipilih !", "Peringatan", JOptionPane.WARNING_MESSAGE);
         } else if (fldWarna.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Jenis Warna Harus Dipilih !");
+            JOptionPane.showMessageDialog(null, "Jenis Warna Harus Dipilih !", "Peringatan", JOptionPane.WARNING_MESSAGE);
         } else if (fldHarga.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Harga Harus Ditentukan !");
+            JOptionPane.showMessageDialog(null, "Harga Harus Ditentukan!", "Peringatan", JOptionPane.WARNING_MESSAGE);
         } else if (fldQty.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Jumlah Barang Harus Ditentukan !");
+            JOptionPane.showMessageDialog(null, "Jumlah Barang Harus Ditentukan !", "Peringatan", JOptionPane.WARNING_MESSAGE);
         } else if (fldDiskon.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Diskon Harus Ditentukan !");
+            JOptionPane.showMessageDialog(null, "Diskon Harus Ditentukan !", "Peringatan", JOptionPane.WARNING_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(null, "Pesanan Diprosses !");
             
@@ -289,6 +312,35 @@ public class RabbaniShop extends javax.swing.JFrame {
         fldDiskon.setText("");
         fldTotalHarga.setText("");
     }//GEN-LAST:event_BulangActionPerformed
+
+    void validasiAngka(KeyEvent a){
+        if(!Character.isDigit(a.getKeyChar())){
+            a.consume();
+            JOptionPane.showMessageDialog(null, "Anda Hanya Bisa memasukan Angka Saja !", "Peringatan", JOptionPane.WARNING_MESSAGE);
+            //JOptionPane.showMessageDialog(null,"Masukan Angka Saja !");
+        } else {
+        }
+    }
+    
+    private void fldHargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldHargaActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_fldHargaActionPerformed
+
+    private void fldHargaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fldHargaKeyTyped
+        // TODO add your handling code here:
+        validasiAngka(evt);
+    }//GEN-LAST:event_fldHargaKeyTyped
+
+    private void fldQtyKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fldQtyKeyTyped
+        // TODO add your handling code here:
+        validasiAngka(evt);
+    }//GEN-LAST:event_fldQtyKeyTyped
+
+    private void fldDiskonKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fldDiskonKeyTyped
+        // TODO add your handling code here:
+        validasiAngka(evt);
+    }//GEN-LAST:event_fldDiskonKeyTyped
 
     /**
      * @param args the command line arguments
