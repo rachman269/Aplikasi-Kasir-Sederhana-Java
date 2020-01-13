@@ -5,9 +5,12 @@
  */
 package melatiputri;
 
+// untu mengimport library java
 import java.awt.event.KeyEvent;
+import javafx.scene.paint.Color;
 import javax.swing.JOptionPane;
 import javax.swing.DefaultListModel;
+import com.placeholder.PlaceHolder;
 
 /**
  *
@@ -21,13 +24,24 @@ public class RabbaniShop extends javax.swing.JFrame {
      */
     public RabbaniShop() {
         initComponents();
+        // SetTitle untuk memberikan Title ke program
         setTitle("Rabbani Putri Shop By Asna Nurfadilah");  
         
+        // Awal
+        // setEditable(false) agar field tidak bisa dinput user
         fldNamaBarang.setEditable(false);
         fldBahan.setEditable(false);
         fldUkuran.setEditable(false);
         fldWarna.setEditable(false);
         fldTotalHarga.setEditable(false);
+        areaRincian.setEditable(false);
+        // Akhir
+        
+        // untuk memberikan Placeholder ke variabel fldHarag, fldQty dan fldDiskon
+        PlaceHolder holder1 = new PlaceHolder(fldHarga,"Harga...");
+        PlaceHolder holder2 = new PlaceHolder(fldQty, "Jumlah...");
+        PlaceHolder holder3 = new PlaceHolder(fldDiskon, "Diskon...");
+        
     }
 
     /**
@@ -69,6 +83,9 @@ public class RabbaniShop extends javax.swing.JFrame {
         Bkeluar = new javax.swing.JButton();
         lblPersen = new javax.swing.JLabel();
         lblLogo = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        areaRincian = new javax.swing.JTextArea();
+        jLabel1 = new javax.swing.JLabel();
         lblBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -80,7 +97,7 @@ public class RabbaniShop extends javax.swing.JFrame {
         getContentPane().add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, -1, -1));
 
         listNamaBarang.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "1. Segitiga", "2. Segi Empat", "3. Pashmina", "4. Bergo", "5. Syiria" };
+            String[] strings = { "1. Segitiga", "2. Segi Empat", "3. Pashmina", "4. Bergo", "5. Syiria", "6. Rajut", "7. Jumbo", "8. Hoodie", "9. Cape", "10. Polyster" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
@@ -94,7 +111,7 @@ public class RabbaniShop extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 132, 120));
 
         listBahan.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "1. Sifon", "2. Diamond", "3. Katun", "4. Satin", "5. Sutera" };
+            String[] strings = { "1. Sifon", "2. Diamond", "3. Katun", "4. Satin", "5. Sutera", "6. Spandex", "7. Voile", "8. Ceruti", "9. Wolfis", "10. Rayon" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
@@ -105,10 +122,10 @@ public class RabbaniShop extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(listBahan);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 101, 120));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 100, 120));
 
         listUkuran.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "1. S", "2. M", "3. L", "4. XL" };
+            String[] strings = { "1. S", "2. M", "3. L", "4. XL", "5. XXL" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
@@ -119,7 +136,7 @@ public class RabbaniShop extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(listUkuran);
 
-        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 57, 120));
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, 90, 120));
 
         listWarna.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "1. Merah", "2. Kuning", "3. Hijau", "4. Biru", "5. Hitam", "6. Putih", "7. Coklat", "8. Abu-Abu", "9. Ungu", "10. Pink" };
@@ -133,33 +150,40 @@ public class RabbaniShop extends javax.swing.JFrame {
         });
         jScrollPane4.setViewportView(listWarna);
 
-        getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 140, 100, 220));
+        getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 140, 100, 120));
 
         lblNamaBarang.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblNamaBarang.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblNamaBarang.setText("Nama Barang");
-        getContentPane().add(lblNamaBarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 155, -1));
+        getContentPane().add(lblNamaBarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 130, -1));
 
         lblBahan.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblBahan.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblBahan.setText("Bahan");
-        getContentPane().add(lblBahan, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, -1, -1));
+        getContentPane().add(lblBahan, new org.netbeans.lib.awtextra.AbsoluteConstraints(168, 110, 100, 20));
 
         lblUkuran.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblUkuran.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblUkuran.setText("Ukuran");
-        getContentPane().add(lblUkuran, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, -1, -1));
+        getContentPane().add(lblUkuran, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 110, 80, -1));
 
         lblWarna.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblWarna.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblWarna.setText("Warna");
-        getContentPane().add(lblWarna, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, -1, -1));
-        getContentPane().add(fldNamaBarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 132, -1));
-        getContentPane().add(fldBahan, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, 101, -1));
-        getContentPane().add(fldUkuran, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 270, 57, -1));
-        getContentPane().add(fldWarna, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 370, 100, -1));
+        getContentPane().add(lblWarna, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, 100, -1));
 
-        fldHarga.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fldHargaActionPerformed(evt);
-            }
-        });
+        fldNamaBarang.setText("Pilih Barang");
+        getContentPane().add(fldNamaBarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 132, -1));
+
+        fldBahan.setText("Pilih Bahan");
+        getContentPane().add(fldBahan, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, 101, -1));
+
+        fldUkuran.setText("Pilih Bahan");
+        getContentPane().add(fldUkuran, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 260, 90, -1));
+
+        fldWarna.setText("Pilih Bahan");
+        getContentPane().add(fldWarna, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 260, 100, -1));
+
         fldHarga.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 fldHargaKeyTyped(evt);
@@ -180,20 +204,24 @@ public class RabbaniShop extends javax.swing.JFrame {
             }
         });
         getContentPane().add(fldDiskon, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, 60, -1));
-        getContentPane().add(fldTotalHarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, 110, -1));
+        getContentPane().add(fldTotalHarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 460, 120, -1));
 
+        lblHarga.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblHarga.setText("Harga       ");
-        getContentPane().add(lblHarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
+        getContentPane().add(lblHarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, 20));
 
+        lblQty.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblQty.setText("Qty           ");
-        getContentPane().add(lblQty, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, -1, -1));
+        getContentPane().add(lblQty, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, -1, 20));
 
+        lblDiscount.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblDiscount.setText("Discount   ");
-        getContentPane().add(lblDiscount, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, -1));
+        getContentPane().add(lblDiscount, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, 20));
 
         lblTotalHarga.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblTotalHarga.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTotalHarga.setText("Total Harga");
-        getContentPane().add(lblTotalHarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 330, -1, -1));
+        getContentPane().add(lblTotalHarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 440, 120, -1));
 
         Btotal.setText("TOTAL");
         Btotal.addActionListener(new java.awt.event.ActionListener() {
@@ -201,7 +229,7 @@ public class RabbaniShop extends javax.swing.JFrame {
                 BtotalActionPerformed(evt);
             }
         });
-        getContentPane().add(Btotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 410, -1, -1));
+        getContentPane().add(Btotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 460, -1, -1));
 
         Bulang.setText("ULANG");
         Bulang.addActionListener(new java.awt.event.ActionListener() {
@@ -209,7 +237,7 @@ public class RabbaniShop extends javax.swing.JFrame {
                 BulangActionPerformed(evt);
             }
         });
-        getContentPane().add(Bulang, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 410, -1, -1));
+        getContentPane().add(Bulang, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 460, -1, -1));
 
         Bkeluar.setText("KELUAR");
         Bkeluar.addActionListener(new java.awt.event.ActionListener() {
@@ -217,7 +245,7 @@ public class RabbaniShop extends javax.swing.JFrame {
                 BkeluarActionPerformed(evt);
             }
         });
-        getContentPane().add(Bkeluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 410, -1, -1));
+        getContentPane().add(Bkeluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 460, -1, -1));
 
         lblPersen.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lblPersen.setText("%");
@@ -226,74 +254,119 @@ public class RabbaniShop extends javax.swing.JFrame {
         lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/melatiputri/img/rabbani.png"))); // NOI18N
         getContentPane().add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, -1, -1));
 
+        areaRincian.setColumns(20);
+        areaRincian.setRows(5);
+        jScrollPane5.setViewportView(areaRincian);
+
+        getContentPane().add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 240, 130));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setText("Rincian");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 290, 240, -1));
+
+        lblBackground.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/melatiputri/img/Background.jpg"))); // NOI18N
         lblBackground.setText("jLabel1");
         lblBackground.setMaximumSize(new java.awt.Dimension(511, 466));
         lblBackground.setMinimumSize(new java.awt.Dimension(511, 466));
         lblBackground.setPreferredSize(new java.awt.Dimension(511, 466));
-        getContentPane().add(lblBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 520, 470));
+        getContentPane().add(lblBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 520, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void BkeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BkeluarActionPerformed
-        // TODO add your handling code here:
-        // perintah untuk melakukan keluar dari program
+        // perintah untuk melakukan keluar dari program ketika di klik tombol keluar
         System.exit(0);
     }//GEN-LAST:event_BkeluarActionPerformed
 
     private void BtotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtotalActionPerformed
-        // TODO add your handling code here:
-        int hargaAwal, hargaDiskon, hargaAkhir, total;
+        // variabel hargaAwal, sampe hargaAkhir untuk menampung nilai menggunakan tipe data integer
+        // variabel Asna1 sampe asna7 digunakan untuk menampung data, menggunakan tipe data string
+        int hargaAwal, hargaDiskon, hargaAkhir;
+        String asna1, asna2, asna3, asna4, asna5, asna6, asna7;
         
+        /* Awal 
+         * Variabel Asna1 sampe asna7 akan menampung data dari variabel fldnamaBarang sampe fldDiskon */
+        asna1 = fldNamaBarang.getText();
+        asna2 = fldBahan.getText();
+        asna3 = fldUkuran.getText();
+        asna4 = fldWarna.getText();
+        asna5 = fldHarga.getText();
+        asna6 = fldQty.getText();
+        asna7 = fldDiskon.getText();
+        /* Akhir */
+        
+        // if else untuk JOptionPane untuk memberikan pesan error ketika user tidak mengisi field
         if (fldNamaBarang.getText().equals("")) {
+            // Pesan Dialog Ketika user tidak mengisi field akan ada informasi error ketika sudahklik tombol total
             JOptionPane.showMessageDialog(null, "Barang Harus Dipilih!", "Peringatan", JOptionPane.WARNING_MESSAGE);
         } else if (fldBahan.getText().equals("")) {
+            // Pesan Dialog Ketika user tidak mengisi field akan ada informasi error ketika sudahklik tombol total
             JOptionPane.showMessageDialog(null, "Jenis Bahan Harus Dipilih !", "Peringatan", JOptionPane.WARNING_MESSAGE);
         } else if (fldUkuran.getText().equals("")) {
+            // Pesan Dialog Ketika user tidak mengisi field akan ada informasi error ketika sudahklik tombol total
             JOptionPane.showMessageDialog(null, "Ukuran Harus Dipilih !", "Peringatan", JOptionPane.WARNING_MESSAGE);
         } else if (fldWarna.getText().equals("")) {
+            // Pesan Dialog Ketika user tidak mengisi field akan ada informasi error ketika sudahklik tombol total
             JOptionPane.showMessageDialog(null, "Jenis Warna Harus Dipilih !", "Peringatan", JOptionPane.WARNING_MESSAGE);
         } else if (fldHarga.getText().equals("")) {
+            // Pesan Dialog Ketika user tidak mengisi field akan ada informasi error ketika sudahklik tombol total
             JOptionPane.showMessageDialog(null, "Harga Harus Ditentukan!", "Peringatan", JOptionPane.WARNING_MESSAGE);
         } else if (fldQty.getText().equals("")) {
+            // Pesan Dialog Ketika user tidak mengisi field akan ada informasi error ketika sudahklik tombol total
             JOptionPane.showMessageDialog(null, "Jumlah Barang Harus Ditentukan !", "Peringatan", JOptionPane.WARNING_MESSAGE);
         } else if (fldDiskon.getText().equals("")) {
+            // Pesan Dialog Ketika user tidak mengisi field akan ada informasi error ketika sudahklik tombol total
             JOptionPane.showMessageDialog(null, "Diskon Harus Ditentukan !", "Peringatan", JOptionPane.WARNING_MESSAGE);
         } else {
+            // Pesan Dialog Ketika user klik tombol total
             JOptionPane.showMessageDialog(null, "Pesanan Diprosses !");
             
+            // hargaAwal untuk mengkalikan nilai dari variabel fldHarga dan fldDiskon lalu akan dibagi 100
+            // hargaDiskon untuk mengurangi agar mendapattkan harga diskon
+            // hargaAkhir untuk mengkalikan harga yang telah mendapatkan dengan diskon dengan data dari variabel fldQty
+            // fldTotalHarga settext untuk menampilkan data dari vvariabel hargaAkhir
             hargaAwal = (Integer.parseInt(fldHarga.getText()) * Integer.parseInt(fldDiskon.getText()) / 100);
             hargaDiskon = Integer.parseInt(fldHarga.getText()) - hargaAwal;
             hargaAkhir = hargaDiskon * Integer.parseInt(fldQty.getText());
             fldTotalHarga.setText("Rp. "+hargaAkhir);
+            
+            // Awal
+            // Menampilkan Hasil Input dari User secara rinci Ke text area
+            areaRincian.setText(areaRincian.getText()
+                                +"Nama Barang \t: "+ asna1 +
+                                "\nNama Bahan \t: "+ asna2+
+                                "\nUkuran  \t: "+ asna3+
+                                "\nWarna \t: "+ asna4+
+                                "\nJumlah \t: "+ asna6+
+                                "\nDiskon \t: "+ asna7+"%"+
+                                "\nHarga Satuan \t: Rp. "+ asna5
+            );
+            // Akhir
         }
         
     }//GEN-LAST:event_BtotalActionPerformed
 
     private void listNamaBarangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listNamaBarangMouseClicked
-        // TODO add your handling code here:
         // Perintah dibawah  merupakan perintah untuk mengambil data dari variabel listNamaBarang
         // dan di tampung di variabel fldNamaBarang
         fldNamaBarang.setText(listNamaBarang.getSelectedValue());
     }//GEN-LAST:event_listNamaBarangMouseClicked
 
     private void listBahanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listBahanMouseClicked
-        // TODO add your handling code here:
         // Perintah dibawah  merupakan perintah untuk mengambil data dari variabel listBahan
         // dan di tampung di variabel fldBahan
         fldBahan.setText(listBahan.getSelectedValue());
     }//GEN-LAST:event_listBahanMouseClicked
 
     private void listUkuranMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listUkuranMouseClicked
-        // TODO add your handling code here:
         // Perintah dibawah  merupakan perintah untuk mengambil data dari variabel listUkuran
         // dan di tampung di variabel listUkuran
         fldUkuran.setText(listUkuran.getSelectedValue());
     }//GEN-LAST:event_listUkuranMouseClicked
 
     private void listWarnaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listWarnaMouseClicked
-        // TODO add your handling code here:
         // Perintah dibawah  merupakan perintah untuk mengambil data dari variabel listWarna
         // dan di tampung di variabel fldWarna
         fldWarna.setText(listWarna.getSelectedValue());
@@ -311,34 +384,30 @@ public class RabbaniShop extends javax.swing.JFrame {
         fldQty.setText("");
         fldDiskon.setText("");
         fldTotalHarga.setText("");
+        areaRincian.setText("");
     }//GEN-LAST:event_BulangActionPerformed
 
+    
+    // function VaidasiAngka untuk memberikan pesan error pada field ketika user salah nginput
     void validasiAngka(KeyEvent a){
         if(!Character.isDigit(a.getKeyChar())){
             a.consume();
-            JOptionPane.showMessageDialog(null, "Anda Hanya Bisa memasukan Angka Saja !", "Peringatan", JOptionPane.WARNING_MESSAGE);
-            //JOptionPane.showMessageDialog(null,"Masukan Angka Saja !");
-        } else {
+            JOptionPane.showMessageDialog(null, "Anda Hanya Bisa Memasukan Angka Saja !", "Peringatan", JOptionPane.WARNING_MESSAGE);
         }
     }
     
-    private void fldHargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldHargaActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_fldHargaActionPerformed
-
     private void fldHargaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fldHargaKeyTyped
-        // TODO add your handling code here:
+        // pesan input kesalahan dari function validasiAngka
         validasiAngka(evt);
     }//GEN-LAST:event_fldHargaKeyTyped
 
     private void fldQtyKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fldQtyKeyTyped
-        // TODO add your handling code here:
+        // pesan input kesalahan dari function validasiAngka
         validasiAngka(evt);
     }//GEN-LAST:event_fldQtyKeyTyped
 
     private void fldDiskonKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fldDiskonKeyTyped
-        // TODO add your handling code here:
+        // pesan input kesalahan dari function validasiAngka
         validasiAngka(evt);
     }//GEN-LAST:event_fldDiskonKeyTyped
 
@@ -382,6 +451,7 @@ public class RabbaniShop extends javax.swing.JFrame {
     private javax.swing.JButton Bkeluar;
     private javax.swing.JButton Btotal;
     private javax.swing.JButton Bulang;
+    private javax.swing.JTextArea areaRincian;
     private javax.swing.JTextField fldBahan;
     private javax.swing.JTextField fldDiskon;
     private javax.swing.JTextField fldHarga;
@@ -390,10 +460,12 @@ public class RabbaniShop extends javax.swing.JFrame {
     private javax.swing.JTextField fldTotalHarga;
     private javax.swing.JTextField fldUkuran;
     private javax.swing.JTextField fldWarna;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JLabel lblBackground;
     private javax.swing.JLabel lblBahan;
     private javax.swing.JLabel lblDiscount;
@@ -411,5 +483,6 @@ public class RabbaniShop extends javax.swing.JFrame {
     private javax.swing.JList<String> listUkuran;
     private javax.swing.JList<String> listWarna;
     // End of variables declaration//GEN-END:variables
+    // default list Model mdl
     DefaultListModel mdl = new DefaultListModel();
 }
