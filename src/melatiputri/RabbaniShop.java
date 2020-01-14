@@ -10,7 +10,6 @@ import java.awt.event.KeyEvent;
 import javafx.scene.paint.Color;
 import javax.swing.JOptionPane;
 import javax.swing.DefaultListModel;
-import com.placeholder.PlaceHolder;
 
 /**
  *
@@ -33,15 +32,8 @@ public class RabbaniShop extends javax.swing.JFrame {
         fldBahan.setEditable(false);
         fldUkuran.setEditable(false);
         fldWarna.setEditable(false);
-        fldTotalHarga.setEditable(false);
         areaRincian.setEditable(false);
         // Akhir
-        
-        // untuk memberikan Placeholder ke variabel fldHarag, fldQty dan fldDiskon
-        PlaceHolder holder1 = new PlaceHolder(fldHarga,"Harga...");
-        PlaceHolder holder2 = new PlaceHolder(fldQty, "Jumlah...");
-        PlaceHolder holder3 = new PlaceHolder(fldDiskon, "Diskon...");
-        
     }
 
     /**
@@ -73,11 +65,9 @@ public class RabbaniShop extends javax.swing.JFrame {
         fldHarga = new javax.swing.JTextField();
         fldQty = new javax.swing.JTextField();
         fldDiskon = new javax.swing.JTextField();
-        fldTotalHarga = new javax.swing.JTextField();
         lblHarga = new javax.swing.JLabel();
         lblQty = new javax.swing.JLabel();
         lblDiscount = new javax.swing.JLabel();
-        lblTotalHarga = new javax.swing.JLabel();
         Btotal = new javax.swing.JButton();
         Bulang = new javax.swing.JButton();
         Bkeluar = new javax.swing.JButton();
@@ -86,6 +76,8 @@ public class RabbaniShop extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         areaRincian = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        fldBayar = new javax.swing.JTextField();
         lblBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -171,17 +163,9 @@ public class RabbaniShop extends javax.swing.JFrame {
         lblWarna.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblWarna.setText("Warna");
         getContentPane().add(lblWarna, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, 100, -1));
-
-        fldNamaBarang.setText("Pilih Barang");
         getContentPane().add(fldNamaBarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 132, -1));
-
-        fldBahan.setText("Pilih Bahan");
         getContentPane().add(fldBahan, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, 101, -1));
-
-        fldUkuran.setText("Pilih Bahan");
         getContentPane().add(fldUkuran, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 260, 90, -1));
-
-        fldWarna.setText("Pilih Bahan");
         getContentPane().add(fldWarna, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 260, 100, -1));
 
         fldHarga.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -189,39 +173,33 @@ public class RabbaniShop extends javax.swing.JFrame {
                 fldHargaKeyTyped(evt);
             }
         });
-        getContentPane().add(fldHarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, 82, -1));
+        getContentPane().add(fldHarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 300, 82, -1));
 
         fldQty.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 fldQtyKeyTyped(evt);
             }
         });
-        getContentPane().add(fldQty, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 340, 82, -1));
+        getContentPane().add(fldQty, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, 82, -1));
 
         fldDiskon.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 fldDiskonKeyTyped(evt);
             }
         });
-        getContentPane().add(fldDiskon, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, 60, -1));
-        getContentPane().add(fldTotalHarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 460, 120, -1));
+        getContentPane().add(fldDiskon, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 360, 60, -1));
 
         lblHarga.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblHarga.setText("Harga       ");
-        getContentPane().add(lblHarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, 20));
+        getContentPane().add(lblHarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, 20));
 
         lblQty.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblQty.setText("Qty           ");
-        getContentPane().add(lblQty, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, -1, 20));
+        getContentPane().add(lblQty, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, -1, 20));
 
         lblDiscount.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblDiscount.setText("Discount   ");
-        getContentPane().add(lblDiscount, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, 20));
-
-        lblTotalHarga.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblTotalHarga.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTotalHarga.setText("Total Harga");
-        getContentPane().add(lblTotalHarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 440, 120, -1));
+        getContentPane().add(lblDiscount, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, -1, 20));
 
         Btotal.setText("TOTAL");
         Btotal.addActionListener(new java.awt.event.ActionListener() {
@@ -229,7 +207,7 @@ public class RabbaniShop extends javax.swing.JFrame {
                 BtotalActionPerformed(evt);
             }
         });
-        getContentPane().add(Btotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 460, -1, -1));
+        getContentPane().add(Btotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 430, -1, -1));
 
         Bulang.setText("ULANG");
         Bulang.addActionListener(new java.awt.event.ActionListener() {
@@ -237,7 +215,7 @@ public class RabbaniShop extends javax.swing.JFrame {
                 BulangActionPerformed(evt);
             }
         });
-        getContentPane().add(Bulang, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 460, -1, -1));
+        getContentPane().add(Bulang, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, -1, -1));
 
         Bkeluar.setText("KELUAR");
         Bkeluar.addActionListener(new java.awt.event.ActionListener() {
@@ -245,11 +223,11 @@ public class RabbaniShop extends javax.swing.JFrame {
                 BkeluarActionPerformed(evt);
             }
         });
-        getContentPane().add(Bkeluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 460, -1, -1));
+        getContentPane().add(Bkeluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 460, -1, -1));
 
         lblPersen.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lblPersen.setText("%");
-        getContentPane().add(lblPersen, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, -1, -1));
+        getContentPane().add(lblPersen, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 360, -1, -1));
 
         lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/melatiputri/img/rabbani.png"))); // NOI18N
         getContentPane().add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, -1, -1));
@@ -258,11 +236,16 @@ public class RabbaniShop extends javax.swing.JFrame {
         areaRincian.setRows(5);
         jScrollPane5.setViewportView(areaRincian);
 
-        getContentPane().add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 240, 130));
+        getContentPane().add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 260, 180));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setText("Rincian");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 290, 240, -1));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setText("Bayar");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, 20));
+        getContentPane().add(fldBayar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, 80, -1));
 
         lblBackground.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/melatiputri/img/Background.jpg"))); // NOI18N
@@ -270,7 +253,7 @@ public class RabbaniShop extends javax.swing.JFrame {
         lblBackground.setMaximumSize(new java.awt.Dimension(511, 466));
         lblBackground.setMinimumSize(new java.awt.Dimension(511, 466));
         lblBackground.setPreferredSize(new java.awt.Dimension(511, 466));
-        getContentPane().add(lblBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 520, 500));
+        getContentPane().add(lblBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 520, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -283,8 +266,8 @@ public class RabbaniShop extends javax.swing.JFrame {
     private void BtotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtotalActionPerformed
         // variabel hargaAwal, sampe hargaAkhir untuk menampung nilai menggunakan tipe data integer
         // variabel Asna1 sampe asna7 digunakan untuk menampung data, menggunakan tipe data string
-        int hargaAwal, hargaDiskon, hargaAkhir;
-        String asna1, asna2, asna3, asna4, asna5, asna6, asna7;
+        int hargaAwal, hargaDiskon, hargaAkhir, uangKembalian;
+        String asna1, asna2, asna3, asna4, asna5, asna6, asna7, asna8;
         
         /* Awal 
          * Variabel Asna1 sampe asna7 akan menampung data dari variabel fldnamaBarang sampe fldDiskon */
@@ -330,7 +313,7 @@ public class RabbaniShop extends javax.swing.JFrame {
             hargaAwal = (Integer.parseInt(fldHarga.getText()) * Integer.parseInt(fldDiskon.getText()) / 100);
             hargaDiskon = Integer.parseInt(fldHarga.getText()) - hargaAwal;
             hargaAkhir = hargaDiskon * Integer.parseInt(fldQty.getText());
-            fldTotalHarga.setText("Rp. "+hargaAkhir);
+            uangKembalian = Integer.parseInt(fldBayar.getText()) - hargaAkhir;
             
             // Awal
             // Menampilkan Hasil Input dari User secara rinci Ke text area
@@ -341,7 +324,9 @@ public class RabbaniShop extends javax.swing.JFrame {
                                 "\nWarna \t: "+ asna4+
                                 "\nJumlah \t: "+ asna6+
                                 "\nDiskon \t: "+ asna7+"%"+
-                                "\nHarga Satuan \t: Rp. "+ asna5
+                                "\nHarga Satuan \t: Rp. "+ asna5+
+                                "\nTotal Bayar \t: Rp. " + hargaAkhir+
+                                "\nKembalian \t: Rp. " + uangKembalian
             );
             // Akhir
         }
@@ -383,7 +368,7 @@ public class RabbaniShop extends javax.swing.JFrame {
         fldHarga.setText("");
         fldQty.setText("");
         fldDiskon.setText("");
-        fldTotalHarga.setText("");
+        fldBayar.setText("");
         areaRincian.setText("");
     }//GEN-LAST:event_BulangActionPerformed
 
@@ -453,14 +438,15 @@ public class RabbaniShop extends javax.swing.JFrame {
     private javax.swing.JButton Bulang;
     private javax.swing.JTextArea areaRincian;
     private javax.swing.JTextField fldBahan;
+    private javax.swing.JTextField fldBayar;
     private javax.swing.JTextField fldDiskon;
     private javax.swing.JTextField fldHarga;
     private javax.swing.JTextField fldNamaBarang;
     private javax.swing.JTextField fldQty;
-    private javax.swing.JTextField fldTotalHarga;
     private javax.swing.JTextField fldUkuran;
     private javax.swing.JTextField fldWarna;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -475,7 +461,6 @@ public class RabbaniShop extends javax.swing.JFrame {
     private javax.swing.JLabel lblPersen;
     private javax.swing.JLabel lblQty;
     private javax.swing.JLabel lblTitle;
-    private javax.swing.JLabel lblTotalHarga;
     private javax.swing.JLabel lblUkuran;
     private javax.swing.JLabel lblWarna;
     private javax.swing.JList<String> listBahan;
